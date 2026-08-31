@@ -4,6 +4,5 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/cheackout@v4
       - run: echo "Build started for $GITHUB_SHA"
       - run: ls -la
