@@ -1,12 +1,9 @@
-name: My First Workflow
-
-on:
-  push:
-
+name: CI
+on: push
 jobs:
-  hello:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Hello
-        run: echo "Hello, GitHub Actions!"
+      - uses: actions/cheackout@v4
+      - run: echo "Build started for $GITHUB_SHA"
+      - run: ls -la
