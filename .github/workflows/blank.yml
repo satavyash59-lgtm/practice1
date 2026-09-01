@@ -8,9 +8,9 @@ jobs:
         uses: actions/checkout@v4
       - run: echo " lint step running"
 
-    test:
+  test:
       runs-on: ubuntu-latest
       steps:
-       - uses: actions/chechout@v4
+       - uses: actions/checkout@v4
        - run: echo "Test step running"
       
