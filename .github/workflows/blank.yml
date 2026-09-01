@@ -3,12 +3,11 @@ on: push
 env:
   APP_NAME: my-app
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
-    env:
-      NODE_ENV: production
     steps:
-     - name: show them
+     - uses: actions/checkout@v4
+     - name: Deploy
        env:
-         GREETING: hello
-       run: echo "$APP_NAME $NODE_ENV $GREETING"
+         TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+       run: echo "Deploing with token length: ${#TOKEN}"
