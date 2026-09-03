@@ -12,7 +12,11 @@ jobs:
   deploy:
     needs: test
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    environment: production
+      
     steps:
       - uses: actions/checkout@v4
+      - name: Deploy
+        env:
+         TOKEN : ${{secrets.DEPLOY_TOKEN}}
       - run: echo "Deploying because this is main"
