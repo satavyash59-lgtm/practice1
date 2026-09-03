@@ -1,12 +1,13 @@
 name: Deploy
+
 on:
   workflow_dispatch:
   push:
-    branchs: [ main ]
+    branches: [ main ]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-     - uses: actions/chechout@v4
-     - run: echo "Developed"
+      - uses: actions/checkout@v4
+      - run: echo "Developed"
